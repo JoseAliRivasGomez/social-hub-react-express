@@ -14,14 +14,16 @@ router.get('/auth/twitter', [validarJWT, passport.authenticate('twitter')]);
 router.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
     assignProperty: 'federatedUser',
     //successRedirect: '/',
-    failureRedirect: 'http://localhost:3000/channels/connect',
+    //failureRedirect: 'http://localhost:3000/channels/connect',
+    failureRedirect: 'https://social-hub21.herokuapp.com/channels/connect',
   }), connectionsController.createLinkedInConnection
 );
 
 router.get('/auth/twitter/callback', passport.authenticate('twitter', {
     assignProperty: 'federatedUser',
     //successRedirect: '/',
-    failureRedirect: 'http://localhost:3000/channels/connect',
+    //failureRedirect: 'http://localhost:3000/channels/connect',
+    failureRedirect: 'https://social-hub21.herokuapp.com/channels/connect',
   }), connectionsController.createTwitterConnection
 );
 
