@@ -145,7 +145,7 @@ const createTwitterConnection = async (req = request, res = response) => {
                 mediaId, accessToken, username, photoURL: photo, tokenSecret,
             });
             //return res.redirect('http://localhost:3000/channels');
-            return res.redirect('https://social-hub21.herokuapp.com/channels');
+            return res.redirect('https://social-hub-react-express-production.up.railway.app/channels');
         }
 
         const c2 = await Channels_Users.findOne({
@@ -187,7 +187,7 @@ const createTwitterConnection = async (req = request, res = response) => {
         req.user = null;
         //console.log(req);
         //res.redirect('http://localhost:3000/channels');
-        res.redirect('https://social-hub21.herokuapp.com/channels');
+        res.redirect('https://social-hub-react-express-production.up.railway.app/channels');
         
 
     } catch (error) {
@@ -256,7 +256,7 @@ const createLinkedInConnection = async (req = request, res = response) => {
                 mediaId, accessToken, username, photoURL: photo,
             });
             //return res.redirect('http://localhost:3000/channels');
-            return res.redirect('https://social-hub21.herokuapp.com/channels');
+            return res.redirect('https://social-hub-react-express-production.up.railway.app/channels');
         }
 
         const c2 = await Channels_Users.findOne({
@@ -298,7 +298,7 @@ const createLinkedInConnection = async (req = request, res = response) => {
         req.user = null;
         //console.log(req);
         //res.redirect('http://localhost:3000/channels');
-        res.redirect('https://social-hub21.herokuapp.com/channels');
+        res.redirect('https://social-hub-react-express-production.up.railway.app/channels');
         
 
     } catch (error) {

@@ -12,9 +12,9 @@ export const ChannelCard = ({channel}) => {
 
     const onNewChannelConnection = () => {
         if(channel.name === 'Twitter'){
-            window.open("https://social-hub21.herokuapp.com/api/connections/auth/twitter", "_self");
+            window.open("https://social-hub-react-express-production.up.railway.app/api/connections/auth/twitter", "_self");
         }else if(channel.name === 'LinkedIn'){
-            window.open("https://social-hub21.herokuapp.com/api/connections/auth/linkedin", "_self");
+            window.open("https://social-hub-react-express-production.up.railway.app/api/connections/auth/linkedin", "_self");
         }
         //setActiveChannel(channel);
         //startSavingConnection(channel);
