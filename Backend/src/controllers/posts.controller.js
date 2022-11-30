@@ -228,11 +228,15 @@ class Publisher {
                     // console.log(scheduleHour);
                     // console.log(scheduleMinute);
 
-                    if (scheduleHour === currentZonedHour && scheduleMinute === currentZonedMinute) {
+                    if ((scheduleHour == currentZonedHour) && (scheduleMinute == currentZonedMinute)) {
 
-                        if(!(lastQueuedPostPublishedHour && lastQueuedPostPublishedHour === currentZonedHour && lastQueuedPostPublishedMinute === currentZonedMinute)){
+                        if((lastQueuedPostPublishedHour != undefined) && (lastQueuedPostPublishedHour == currentZonedHour) && (lastQueuedPostPublishedMinute == currentZonedMinute)){
 
-                            //console.log('PUBLICAR');
+                            //console.log('MISMO MINUTO');
+
+                        }else{
+
+                            //console.log('DIFERENTE MINUTO, PUBLICAR');
 
                             if(postsInQueue[0]){
                                 await Post.update({ state: true }, {
