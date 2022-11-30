@@ -29,6 +29,11 @@ export const scheduleSlice = createSlice({
 
                 return schedule;
             });
+            const x = state.schedules.sort((a, b) =>
+                a.day > b.day ? 1 : a.day === b.day ? (a.time > b.time ? 1 : -1) : -1
+            );
+            state.schedules = [];
+            state.schedules = x;
         },
         onDeleteSchedule: (state) => {
             if (state.activeSchedule){

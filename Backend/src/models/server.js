@@ -42,8 +42,8 @@ class Server {
     middlewares() {
         
         this.app.use(cors({
-            //origin: ['https://social-hub21.herokuapp.com'],
-            origin: ['http://localhost:3000'],
+            origin: ['https://social-hub21.herokuapp.com'],
+            //origin: ['http://localhost:3000'],
             credentials:true,
             exposedHeaders: ["token"],
         }));
@@ -64,7 +64,7 @@ class Server {
         this.app.use(express.json());
         //this.app.use(express.urlencoded({ extended: false }));
         this.app.use(cookieParser());
-        this.app.use(express.static(path.resolve(__dirname, '../public')));
+        this.app.use(express.static('public'));
 
         const LinkedInStrategy=LinkedInOAuth.Strategy
         const LINKEDIN_CLIENTID = process.env.LINKEDIN_CLIENT_ID;
@@ -72,8 +72,8 @@ class Server {
         const LINKEDIN_STRATEGY_OBJECT= {
         clientID: LINKEDIN_CLIENTID,
         clientSecret: LINKEDIN_CLIENTSECRET,
-        //callbackURL: `https://social-hub21.herokuapp.com/api/connections/auth/linkedin/callback`,
-        callbackURL: `http://localhost:${this.port}/api/connections/auth/linkedin/callback`,
+        callbackURL: `https://social-hub21.herokuapp.com/api/connections/auth/linkedin/callback`,
+        //callbackURL: `http://localhost:${this.port}/api/connections/auth/linkedin/callback`,
         scope: ["r_emailaddress", "r_liteprofile", "w_member_social"],
         }
 
@@ -97,8 +97,8 @@ class Server {
         passport.use(new Strategy({
             consumerKey: process.env['TWITTER_CONSUMER_KEY'],
             consumerSecret: process.env['TWITTER_CONSUMER_SECRET'],
-            //callbackURL: `https://social-hub21.herokuapp.com/api/connections/auth/twitter/callback`,
-            callbackURL: `http://localhost:${this.port}/api/connections/auth/twitter/callback`,
+            callbackURL: `https://social-hub21.herokuapp.com/api/connections/auth/twitter/callback`,
+            //callbackURL: `http://localhost:${this.port}/api/connections/auth/twitter/callback`,
             //proxy: trustProxy
           },
           function(token, tokenSecret, profile, done) {

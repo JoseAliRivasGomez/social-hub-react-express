@@ -224,7 +224,7 @@ export function PostModal() {
       }
   }
 
-    console.log(formValues);
+    //console.log(formValues);
 
     if(formValues.postType === 'Instant'){
 

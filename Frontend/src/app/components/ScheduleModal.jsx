@@ -211,7 +211,7 @@ export function ScheduleModal() {
             activeSchedule?.day !== '' && (
               <div className="px-4 pb-4">
                 <Button color="failure" onClick={() => onConfirmDeleteSchedule()}>
-                  Eliminar
+                  Delete
                 </Button>
               </div>
             )
