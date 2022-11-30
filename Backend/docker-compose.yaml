@@ -1,0 +1,16 @@
+
+
+version: '3'
+
+services:
+  db:
+    image: postgres:14.3
+    container_name: social-hub-postgres-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
