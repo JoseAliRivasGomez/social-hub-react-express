@@ -64,7 +64,7 @@ class Server {
         this.app.use(express.json());
         //this.app.use(express.urlencoded({ extended: false }));
         this.app.use(cookieParser());
-        this.app.use(express.static(path.resolve(__dirname, '../public')));
+        this.app.use(express.static('public'));
 
         const LinkedInStrategy=LinkedInOAuth.Strategy
         const LINKEDIN_CLIENTID = process.env.LINKEDIN_CLIENT_ID;
